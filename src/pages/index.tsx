@@ -494,11 +494,11 @@ const RightNav = ({ conversationId }) => {
   const convo = trpc.conversations.get.useQuery(conversationId);
 
   return (
-    <div className="right-side-panel w-[300px] bg-[#f8f8f8] border-l border-[#f3f3f3] flex flex-col py-7">
-      <div className="p-4 w-full">
+    <div className="right-side-panel w-[300px] bg-[#f8f8f8] border-l border-[#f3f3f3] flex flex-col py-0">
+      <div className="p-5 w-full">
         <label
           htmlFor="note"
-          className="block mb-2 text-sm font-medium text-neutral-500 dark:text-white"
+          className="block mb-2 text-sm font-medium text-[#999] dark:text-white"
         >
           Notes
         </label>
@@ -512,7 +512,7 @@ const RightNav = ({ conversationId }) => {
               note: e.target.value,
             });
           }}
-          className="block p-2.5 w-full text-sm text-neutral-900 bg-neutral-50 rounded-lg border border-neutral-200 focus:outline-none resize-none transition-border focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="flex h-[220px] p-2.5 w-full text-sm text-neutral-900 bg-transparent rounded-lg border border-[#eee] focus:outline-none resize-none transition-border focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Some notes..."
         ></textarea>
       </div>
