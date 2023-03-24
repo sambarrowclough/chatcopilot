@@ -29,6 +29,7 @@ specifiers:
   highlight.js: ^11.7.0
   install: ^0.13.0
   jsonwebtoken: ^9.0.0
+  lodash.debounce: ^4.0.8
   lucide: ^0.127.0
   lucide-react: ^0.127.0
   mjml: ^4.13.0
@@ -75,6 +76,7 @@ dependencies:
   highlight.js: 11.7.0
   install: 0.13.0
   jsonwebtoken: 9.0.0
+  lodash.debounce: 4.0.8
   lucide: 0.127.0
   lucide-react: 0.127.0_react@18.2.0
   mjml: 4.13.0
@@ -1871,6 +1873,10 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       p-locate: 6.0.0
+    dev: false
+
+  /lodash.debounce/4.0.8:
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: false
 
   /lodash/4.17.21:

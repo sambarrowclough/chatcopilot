@@ -233,7 +233,7 @@ const ConversationView: NextPage = () => {
               });
               return (
                 <li
-                  className="conversation-item rounded-lg m-4 px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  className="conversation-item rounded-lg m-4 px-4 py-2 hover:bg-neutral-100 cursor-pointer"
                   onClick={(e) => {
                     setActiveConversationId(convo.id);
 
@@ -261,7 +261,7 @@ const ConversationView: NextPage = () => {
                   }}
                 >
                   <div className="flex items-center w-full">
-                    {/* <div className="w-10 h-10 rounded-full bg-gray-200 mr-4"></div> */}
+                    {/* <div className="w-10 h-10 rounded-full bg-neutral-200 mr-4"></div> */}
                     <div className="flex-grow mr-2 truncate">
                       <h2
                         className="truncate text-[#171717]"
@@ -494,9 +494,17 @@ const RightNav = ({ conversationId }) => {
   const convo = trpc.conversations.get.useQuery(conversationId);
 
   return (
-    <div className="right-side-panel w-[300px] bg-[#f8f8f8] border-l border-[#f3f3f3] flex flex-col">
+    <div className="right-side-panel w-[300px] bg-[#f8f8f8] border-l border-[#f3f3f3] flex flex-col py-7">
       <div className="p-4 w-full">
+        <label
+          htmlFor="note"
+          className="block mb-2 text-sm font-medium text-neutral-500 dark:text-white"
+        >
+          Notes
+        </label>
+
         <textarea
+          id="note"
           value={convo?.data?.note!}
           onChange={(e) => {
             updateConvo.mutate({
@@ -504,7 +512,8 @@ const RightNav = ({ conversationId }) => {
               note: e.target.value,
             });
           }}
-          className="w-full"
+          className="block p-2.5 w-full text-sm text-neutral-900 bg-neutral-50 rounded-lg border border-neutral-200 focus:outline-none resize-none transition-border focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Some notes..."
         ></textarea>
       </div>
     </div>
